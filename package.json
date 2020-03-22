@@ -1,0 +1,24 @@
+{
+  "name": "caching-api-with-node-and-redis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeyk333/Caching-API-with-Node-and-Redis.git"
+  },
+  "author": "Jeyanth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeyk333/Caching-API-with-Node-and-Redis/issues"
+  },
+  "homepage": "https://github.com/jeyk333/Caching-API-with-Node-and-Redis#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "redis": "^3.0.2"
+  }
+}

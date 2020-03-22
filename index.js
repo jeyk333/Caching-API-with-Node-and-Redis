@@ -4,15 +4,18 @@ const redis = require("redis");
 
 const app = express();
 
-const PORT = process.env.PORT || 5000;
-const REDIS_PORT = process.env.PORT || 6379;
+const PORT = process.env.PORT || 5000; // Node Server PORT
+const REDIS_PORT = process.env.PORT || 6379; // Redis Server PORT
 
+//Creating Redis Client
 const redisClient = redis.createClient(REDIS_PORT);
 
+// Setting the Key value
 const set = (key, value) => {
   redisClient.set(key, JSON.stringify(value));
 };
 
+// Getting the Key value
 const get = (req, res, next) => {
   let key = req.route.path;
 
@@ -23,6 +26,7 @@ const get = (req, res, next) => {
   });
 };
 
+//Route
 app.get("/posts", get, (req, res) => {
   fetch("https://jsonplaceholder.typicode.com/posts")
     .then(res => res.json())
@@ -32,6 +36,7 @@ app.get("/posts", get, (req, res) => {
     .catch(err => res.status(400).send(err));
 });
 
+// To run the Server
 app.listen(PORT, () => {
   console.log(`Server running in port ${PORT}`);
 });
